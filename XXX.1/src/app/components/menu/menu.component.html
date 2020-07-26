@@ -1,0 +1,18 @@
+<br>
+<a routerLink="/top-product" routerLinkActive="active">Top Product</a>
+<br><br>
+<a routerLink="/home" routerLinkActive="active">Home</a>
+<br><br>
+<a routerLink="/login" *ngIf="!loginService.isLoggedIn" routerLinkActive="active">Login</a>
+<br><br>
+<a href="javascript:void" (click)="logout()" *ngIf="loginService.isLoggedIn" routerLinkActive="active">Logout</a>
+<br><br>
+<a routerLink="/customer" routerLinkActive="active">Customer login</a>
+<br><br>
+<a routerLink="/company" routerLinkActive="active">Company login</a>
+<br><br>
+<a routerLink="/admin" routerLinkActive="active">Admin login</a>
+<br><br>
+<a routerLink="/about" routerLinkActive="active">About</a>
+<br><br>
+<a routerLink="/products" routerLinkActive="active">Products</a>
