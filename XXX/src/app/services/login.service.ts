@@ -20,7 +20,7 @@ export class LoginService {
   }
 
    public userExistsDemo(credentials: Credentials): boolean {
-     if(credentials.type === credentials.type && credentials.username === credentials.username && credentials.password === credentials.password) {
+     if(credentials.type === credentials.type && credentials.name === credentials.name && credentials.password === credentials.password) {
       this.isLoggedIn = true;
       this.type = credentials.type; 
       alert(credentials);

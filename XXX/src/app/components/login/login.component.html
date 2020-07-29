@@ -1,20 +1,21 @@
 <form>
-
+  
     <label>Type: </label>
     <select name="type" [(ngModel)]="credentials.type">
-      <option value="customer">Customer</option>
-      <option value="company">Company</option>
-      <option value="admin">Admin</option>
+      <option value="CUSTOMER">Customer</option>
+      <option value="COMPANY">Company</option>
+      <option value="ADMIN">Admin</option>
     </select>
   <br><br>
 
   <label>Username: </label>
-  <input type="text" name="username" [(ngModel)]="credentials.username">
+  <input type="text" name="name" [(ngModel)]="credentials.name">
   <br><br>
 
   <label>Password: </label>
   <input type="password" name="password" [(ngModel)]="credentials.password">
   <br><br>
-
+  <!--input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/-->
   <button (click)="login()">Login</button>
+
 </form>
