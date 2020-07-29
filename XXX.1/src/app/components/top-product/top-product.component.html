@@ -1,0 +1,13 @@
+<div *ngIf="topProduct">
+  <h2>
+    Name: {{ topProduct.name }}
+  </h2>
+  <h2>
+    Price: {{ topProduct.price }}
+  </h2>
+  <h2>
+    Stock: {{ topProduct.stock }}
+  </h2>
+</div>
+<h2 *ngIf="errorMessage">{{ errorMessage }}</h2>
+<img *ngIf="!done" src="/assets/json/loading2.gif">
