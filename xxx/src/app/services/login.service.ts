@@ -15,7 +15,7 @@ export class LoginService {
   public type: string;
 
   public userExists(credentials: Credentials): Observable<LoginStatus> {
-    alert(credentials);
+    alert(credentials.name+" "+credentials.password+" "+credentials.type);
     return this.httpClient.post<LoginStatus>("http://localhost:8080/login", credentials, {withCredentials: true});
   }
 
