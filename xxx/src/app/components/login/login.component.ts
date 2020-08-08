@@ -23,13 +23,13 @@ export class LoginComponent {
       else {
         this.loginService.isLoggedIn = true;
         this.loginService.type = loginStatus.type;
-        if(loginStatus.type === "customer") {
+        if(JSON.stringify(loginStatus.type) === "CUSTOMER") {
           this.router.navigate(["/customer"]);
         }
-        else if(loginStatus.type === "company") {
+        else if(JSON.stringify(loginStatus.type) === "COMPANY") {
           this.router.navigate(["/company"]);
         }
-        else if(loginStatus.type === "admin") {
+        else if(JSON.stringify(loginStatus.type) === "ADMIN") {
           this.router.navigate(["/admin"]);
         }
     }
