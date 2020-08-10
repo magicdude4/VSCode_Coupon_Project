@@ -3,6 +3,7 @@ import { Credentials } from '../models/credentials';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { LoginStatus } from '../models/login-status';
+import { Component, OnInit } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +11,11 @@ import { LoginStatus } from '../models/login-status';
 export class LoginService {
 
   public constructor(private httpClient: HttpClient) {}
-
+  
   public isLoggedIn: boolean;
   public type: string;
+
+  //JSON.stringify(credentials)
 
   public userExists(credentials: Credentials): Observable<LoginStatus> {
     alert(JSON.stringify(credentials));
