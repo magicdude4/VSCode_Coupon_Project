@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Credentials } from '../models/credentials';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { LoginStatus } from '../models/login-status';
 import { Component, OnInit } from '@angular/core';
@@ -14,12 +14,18 @@ export class LoginService {
   
   public isLoggedIn: boolean;
   public type: string;
+  private SERVER_URL = "http://localhost:8080";
 
   //JSON.stringify(credentials)
-
+  
   public userExists(credentials: Credentials): Observable<LoginStatus> {
-    alert(JSON.stringify(credentials));
-    return this.httpClient.post<LoginStatus>("http://localhost:8080/login", credentials, {withCredentials: true});
+   // const params = new HttpParams()
+   // .set('name', credentials.name) 
+   // .set('password', credentials.password)
+   // .set('type', credentials.type);
+   //const data = {'type': credentials.type, 'name': credentials.name, 'password': credentials.password};
+    alert({credentials});
+    return this.httpClient.post<LoginStatus>(`${this.SERVER_URL}/login`, credentials, {withCredentials: true});
   }
 
    public userExistsDemo(credentials: Credentials): boolean {
